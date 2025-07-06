@@ -1,0 +1,55 @@
+# Backey Configuration
+
+# Upload method: "sftp", "pterodactyl", or "local"
+upload-method: "sftp"
+
+# SFTP Configuration (used when upload-method is "sftp")
+sftp:
+  enabled: true
+  host: "your-vps-ip-or-hostname"
+  port: 22
+  username: "your-username"
+  password: "your-password"
+  # Alternative: Use private key authentication (leave password empty if using key)
+  private-key-path: ""
+  private-key-passphrase: ""
+  # Remote directory to store backups (will be created if doesn't exist)
+  remote-directory: "/home/backups/minecraft"
+  # Connection timeout in seconds
+  timeout: 30
+
+# Pterodactyl Configuration (used when upload-method is "pterodactyl")
+pterodactyl:
+  # Pterodactyl panel URL (e.g., https://panel.example.com)
+  panel-url: "https://your-panel-url.com"
+  # Client API key (from Account Settings -> API Credentials)
+  client-api-key: "your-client-api-key"
+  # Server identifier (found in server URL or server settings)
+  server-id: "your-server-id"
+  # Directory on the server to store backups
+  backup-directory: "/backups"
+
+# Backup Configuration
+backup:
+  # Backup interval in minutes (60 = 1 hour)
+  interval-minutes: 60
+  # Number of backups to keep on remote server
+  keep-backups: 2
+  # Backup filename format (timestamp will be added)
+  filename-prefix: "server-backup"
+  # Compression level (1-9, 9 = best compression)
+  compression-level: 6
+
+# Folders/files to exclude from backup (relative to server root)
+exclude:
+  - "plugins/Backey/backups"
+  - "plugins/Backey/temp"
+  - "logs"
+  - "crash-reports"
+  - "*.log"
+  - "*.tmp"
+  - "cache"
+  - "world/session.lock"
+
+# Enable debug logging
+debug: false

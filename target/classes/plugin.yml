@@ -1,0 +1,29 @@
+name: Backey
+version: 1.0.0
+description: Automatic server backup plugin with SFTP upload
+author: Kyssta
+main: com.kyssta.backey.BackeyPlugin
+api-version: 1.20
+softdepend: []
+
+commands:
+  backup:
+    description: Manually trigger a backup
+    usage: /backup
+    permission: backey.backup
+  backup-reload:
+    description: Reload the backup plugin configuration
+    usage: /backup-reload
+    permission: backey.reload
+  backup-test:
+    description: Test SFTP connection
+    usage: /backup-test
+    permission: backey.backup
+
+permissions:
+  backey.backup:
+    description: Allows manual backup triggering
+    default: op
+  backey.reload:
+    description: Allows reloading plugin configuration
+    default: op
