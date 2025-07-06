@@ -275,4 +275,4 @@ The compiled JAR will be in the `target/` directory.
 ---
 
 **Made with ❤️ for the Server Owners**
-Note : __All the comments and ReadME.md is AI Generated__
+- **Note** : _All the comments and ReadME.md are AI Generated_
